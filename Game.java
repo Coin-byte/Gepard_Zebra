@@ -12,10 +12,11 @@ public class Game {
         do{
             Board.print();
             System.out.println();
+            debug();
 
             for (Animal a : Game.board){
                 if (a != null){
-                    a.move(Animal.moveDir.left);
+                    a.move(Animal.moveDir.right);
                 }
             }
             count++;
@@ -65,5 +66,12 @@ public class Game {
             }
     }
 
+    public static void debug() {
+        for (Animal var : board) {
+            if(var != null){
+                System.out.println(var);
+            }
+        }
+    }
 
 }

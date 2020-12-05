@@ -34,21 +34,4 @@ public class Board {
         return Game.board[x] != null;
     }
 
-    static boolean absoluteLeft(int animalPos){
-        for (int i = 0; i < Game.board.length; i += 60) {
-            if(animalPos == i){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    static boolean absoluteRight(int animalPos){
-        for (int i = 59; i < Game.board.length; i += 60) {
-            if(animalPos == i){
-                return true;
-            }
-        }
-        return false;
-    }
 }

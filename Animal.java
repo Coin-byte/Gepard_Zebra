@@ -1,6 +1,8 @@
 public class Animal {
     private int hunger;
     private int xPos;
+    private int row;
+    private int col;
 
     final int maxHunger = 5;
     
@@ -19,7 +21,10 @@ public class Animal {
         xPos = -1;
     }
     public Animal(int x){
+
         this.xPos = x;
+        this.row = x / 60;
+        this.col = x % 60;
     }
 
 
@@ -48,7 +53,7 @@ public class Animal {
                         break;
                     }
                 case left:
-                    if(Board.absoluteLeft(this.xPos)){
+                    if(this.col == 0){
                         this.setMoved(true);
                         break;
                     }else{
@@ -57,7 +62,7 @@ public class Animal {
                         break;
                     }
                 case right:
-                    if(Board.absoluteRight(this.xPos)){
+                    if(this.col == 59){
                         this.setMoved(true);
                         break;
                     }else{
@@ -103,6 +108,21 @@ public class Animal {
         this.xPos = xPos;
     }
 
+    public void setCol(int col) {
+        this.col = col;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public int getRow() {
+        return row;
+    }
 
     public int getMaxHunger() {
         return maxHunger;
@@ -127,12 +147,11 @@ public class Animal {
     @Override
     public String toString() {
         return "Animal{" +
-                ", hunger=" + hunger +
                 ", xPos=" + xPos +
-                ", maxHunger=" + maxHunger +
+                ", row=" + row +
+                ", col=" + col +
                 ", tag=" + tag +
                 ", moved=" + moved +
-                ", prey=" + prey +
                 '}';
     }
 }
