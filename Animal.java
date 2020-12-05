@@ -35,7 +35,7 @@ public class Animal {
         if(!this.getMoved()){
             switch (dir){
                 case up:
-                    if(this.row == 0){
+                    if(this.row == 1){
                         this.setMoved(true);
                         break;
                     }else{
@@ -44,7 +44,7 @@ public class Animal {
                         break;
                     }
                 case down:
-                    if(this.row == 19){
+                    if(this.row == 18){
                         this.setMoved(true);
                         break;
                     }else{
@@ -53,7 +53,7 @@ public class Animal {
                         break;
                     }
                 case left:
-                    if(this.col == 0){
+                    if(this.col == 1){
                         this.setMoved(true);
                         break;
                     }else{
@@ -62,7 +62,7 @@ public class Animal {
                         break;
                     }
                 case right:
-                    if(this.col == 59){
+                    if(this.col == 58){
                         this.setMoved(true);
                         break;
                     }else{
