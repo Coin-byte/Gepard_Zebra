@@ -13,12 +13,8 @@ public class Game {
             Board.print();
             System.out.println();
             debug();
-
-            for (Animal a : Game.board){
-                if (a != null){
-                    a.move(Animal.moveDir.right);
-                }
-            }
+            moveAll();
+            resetMoved();
             count++;
         }while(count < 10);
 
@@ -64,6 +60,22 @@ public class Game {
             }else{
                 System.out.println("Could not place more animals");
             }
+    }
+
+    public void moveAll(){
+        for (Animal a : board){
+            if (a != null){
+                a.move(Animal.moveDir.right);
+            }
+        }
+    }
+
+    public void resetMoved(){
+        for (Animal a : board){
+            if (a != null){
+                a.setMoved(false);
+            }
+        }
     }
 
     public static void debug() {

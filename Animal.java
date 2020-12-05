@@ -35,7 +35,7 @@ public class Animal {
         if(!this.getMoved()){
             switch (dir){
                 case up:
-                    if(this.getxPos() <= 60){
+                    if(this.row == 0){
                         this.setMoved(true);
                         break;
                     }else{
@@ -44,7 +44,7 @@ public class Animal {
                         break;
                     }
                 case down:
-                    if(this.getxPos() >= 1140){
+                    if(this.row == 19){
                         this.setMoved(true);
                         break;
                     }else{
