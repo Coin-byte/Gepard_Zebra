@@ -15,6 +15,7 @@ public class Game {
             debug();
             moveAll();
             resetMoved();
+
             count++;
         }while(count < 10);
 
@@ -51,7 +52,7 @@ public class Game {
         int x;
 
         do{
-            x = random.nextInt(1198) + 1;
+            x = random.nextInt(1198);
         }while(Board.occupied(x));
             if(a instanceof Gepard){
                 board[x] = new Gepard(x, false);
@@ -65,7 +66,7 @@ public class Game {
     public void moveAll(){
         for (Animal a : board){
             if (a != null){
-                a.move(Animal.moveDir.right);
+                a.move(Animal.moveDir.up);
             }
         }
     }
